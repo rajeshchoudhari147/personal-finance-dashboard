@@ -8,6 +8,9 @@ const t = initTRPC.create({
 export const router = t.router;
 export const publicProcedure = t.procedure;
 
-export type AppRouter = typeof appRouter;
+const appRouter = router({
+  // Add your router definitions here
+});
 
-export const appRouter = router({});
+export type AppRouter = typeof appRouter;
+export { appRouter };
