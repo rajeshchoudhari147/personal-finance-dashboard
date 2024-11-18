@@ -3,8 +3,10 @@ import Dashboard from "@/pages/Dashboard"
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="light" storageKey="wealthwise-theme">
-      <Dashboard />
+    <ThemeProvider defaultTheme="dark" storageKey="wealthwise-theme">
+      <div className="min-h-screen bg-background text-foreground">
+        <Dashboard />
+      </div>
     </ThemeProvider>
   )
 }

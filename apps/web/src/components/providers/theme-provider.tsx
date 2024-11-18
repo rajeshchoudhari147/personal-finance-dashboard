@@ -17,8 +17,9 @@ const ThemeProviderContext = React.createContext<ThemeProviderState | undefined>
 
 export function ThemeProvider({
   children,
-  defaultTheme = "system",
-  storageKey = "vite-ui-theme"}: ThemeProviderProps) {
+  defaultTheme = "dark",
+  storageKey = "wealthwise-theme"
+}: ThemeProviderProps) {
   const [theme, setTheme] = React.useState<Theme>(
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
   )
@@ -50,6 +51,7 @@ export function ThemeProvider({
     }),
     [theme, storageKey]
   )
+
   return (
     <ThemeProviderContext.Provider value={value}>
       {children}
@@ -59,9 +61,8 @@ export function ThemeProvider({
 
 export const useTheme = () => {
   const context = React.useContext(ThemeProviderContext)
-
-  if (context === undefined)
+  if (context === undefined) {
     throw new Error("useTheme must be used within a ThemeProvider")
-
+  }
   return context
 } 
