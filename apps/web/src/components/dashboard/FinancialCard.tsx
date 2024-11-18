@@ -8,6 +8,7 @@ interface FinancialCardProps {
   description: string
   icon: LucideIcon
   trend?: "positive" | "negative" | "neutral"
+  extraContent?: React.ReactNode
 }
 
 export function FinancialCard({
@@ -16,6 +17,7 @@ export function FinancialCard({
   description,
   icon: Icon,
   trend = "neutral",
+  extraContent
 }: FinancialCardProps) {
   return (
     <Card className="bg-card border-border">
@@ -35,6 +37,7 @@ export function FinancialCard({
         >
           {description}
         </p>
+        {extraContent}
       </CardContent>
     </Card>
   )

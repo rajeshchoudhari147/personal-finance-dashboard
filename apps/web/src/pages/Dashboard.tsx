@@ -3,6 +3,7 @@ import { OverviewCards } from "@/components/dashboard/OverviewCards"
 import { IncomeExpenseChart } from "@/components/dashboard/IncomeExpenseChart"
 import { ExpenseBreakdownChart } from "@/components/dashboard/ExpenseBreakdownChart"
 import { RecentTransactionsCard } from "@/components/dashboard/RecentTransactionsCard"
+import { BudgetOverview } from "@/components/dashboard/BudgetOverview"
 
 export default function Dashboard() {
   return (
@@ -12,9 +13,12 @@ export default function Dashboard() {
         <OverviewCards />
         
         <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
-          <IncomeExpenseChart />
           <ExpenseBreakdownChart />
           <RecentTransactionsCard />
+          <BudgetOverview />
+          <div className="col-span-6">
+            <IncomeExpenseChart />
+          </div>
         </div>
       </main>
     </div>
